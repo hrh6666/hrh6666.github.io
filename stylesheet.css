@@ -140,3 +140,148 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+
+.section-table {
+  width: 100%;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.timeline-list {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 14px;
+  border: 1px solid #e8edf2;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  box-shadow: 0 6px 18px rgba(30, 55, 90, 0.05);
+}
+
+.affiliation-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 148px;
+  min-width: 148px;
+  height: 54px;
+}
+
+.affiliation-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.affiliation-logo.logo-slot-tsinghua {
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.affiliation-logo img.logo-tsinghua {
+  max-width: none;
+  width: 340px;
+  max-height: 112px;
+  transform: translateX(-12px);
+}
+
+.timeline-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.timeline-title {
+  font-weight: 700;
+  color: #111827;
+}
+
+.timeline-title:hover,
+.timeline-title:focus {
+  color: #f09228;
+}
+
+.timeline-role {
+  margin-top: 3px;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.timeline-date {
+  min-width: 130px;
+  text-align: right;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.timeline-detail {
+  margin-top: 6px;
+  color: #475569;
+  line-height: 1.35;
+}
+
+@media (max-width: 650px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .affiliation-logo {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    justify-content: flex-start;
+  }
+
+  .affiliation-logo img {
+    max-height: 40px;
+  }
+
+  .affiliation-logo.logo-slot-tsinghua {
+    justify-content: flex-start;
+  }
+
+  .affiliation-logo img.logo-tsinghua {
+    width: 222px;
+    transform: translateX(-42px);
+  }
+
+  .timeline-top {
+    display: block;
+  }
+
+  .timeline-date {
+    margin-top: 4px;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .publication-table tr,
+  .publication-table td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .publication-table td {
+    padding: 8px 16px !important;
+  }
+}
