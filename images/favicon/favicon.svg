@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RH favicon">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="5" x2="56" y2="59" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="0.55" stop-color="#12324a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="letters" x1="18" y1="18" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>
+  <text
+    x="32"
+    y="43"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="34"
+    font-weight="700"
+    fill="url(#letters)">RH</text>
+</svg>
