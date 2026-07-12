@@ -471,7 +471,8 @@ span.highlight {
   }
 
   .profile-section > tbody > tr {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .profile-copy,
@@ -483,6 +484,7 @@ span.highlight {
   }
 
   .profile-photo-cell {
+    order: -1;
     padding-top: 4px !important;
     text-align: center;
   }
