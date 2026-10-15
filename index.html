@@ -264,16 +264,16 @@
         </tbody></table>
 
           <div class="pub-filters" role="group" aria-label="Filter publications">
-            <button type="button" class="pub-filter is-active" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" class="pub-filter" data-filter="selected" aria-pressed="false">Selected</button>
+            <button type="button" class="pub-filter" data-filter="all" aria-pressed="false">All</button>
+            <button type="button" class="pub-filter is-active" data-filter="selected" aria-pressed="true">Selected</button>
             <span class="pub-filter-sep" aria-hidden="true"></span>
             <button type="button" class="pub-filter" data-filter="agents" aria-pressed="false">Agents</button>
             <button type="button" class="pub-filter" data-filter="rl" aria-pressed="false">Reinforcement Learning</button>
             <button type="button" class="pub-filter" data-filter="generative" aria-pressed="false">Generative Models</button>
-            <span class="pub-filter-count" aria-live="polite"></span>
+            <span class="pub-filter-count" aria-live="polite">6 papers</span>
           </div>
 
-		          <table class="publication-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+		          <table class="publication-table is-filtered-selected" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
             <tr class="paper-row representative-paper" data-topics="agents">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
@@ -382,7 +382,7 @@
               </td>
             </tr>
             
-            <tr class="paper-row" data-topics="rl">
+            <tr class="paper-row" hidden data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <video src="images/skillx_real_mocap.mp4" aria-label="SkillX project preview" autoplay muted loop playsinline
@@ -449,7 +449,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row" data-topics="agents">
+            <tr class="paper-row" hidden data-topics="agents">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <img src="https://raw.githubusercontent.com/Imbernoulli/MLS-Bench/main/assets/mls-overview.png" alt="MLS-Bench overview"
@@ -502,7 +502,7 @@
               </td>
             </tr>
 
-		             <tr class="paper-row" data-topics="rl">
+		             <tr class="paper-row" hidden data-topics="rl">
 		              <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="vrrobo_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="vrrobo_video" muted autoplay loop playsinline
@@ -605,7 +605,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row" data-topics="rl">
+            <tr class="paper-row" hidden data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="vrrobo_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <!-- <video id="vrrobo_video" muted autoplay loop playsinline
@@ -646,7 +646,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row" data-topics="rl">
+            <tr class="paper-row" hidden data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="rrw_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="rrw_video" muted autoplay loop playsinline
@@ -725,8 +725,11 @@
           return (row.getAttribute('data-topics') || '').split(' ').indexOf(filter) !== -1;
         }
 
+        var table = document.querySelector('.publication-table');
+
         function apply(filter) {
           var shown = 0;
+          if (table) table.classList.toggle('is-filtered-selected', filter === 'selected');
           rows.forEach(function (row) {
             var show = matches(row, filter);
             row.hidden = !show;
@@ -746,7 +749,7 @@
           });
         });
 
-        apply('all');
+        apply('selected');
       })();
     </script>
   </body>

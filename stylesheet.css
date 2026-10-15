@@ -319,14 +319,6 @@ span.highlight {
   box-shadow: 0 4px 12px rgba(23, 114, 208, 0.22);
 }
 
-/* "Selected" echoes the highlight colour of the representative rows */
-.pub-filter[data-filter="selected"].is-active {
-  color: #7c2d12;
-  background: #fff2a8;
-  border-color: #e3cf6a;
-  box-shadow: 0 4px 12px rgba(190, 150, 30, 0.22);
-}
-
 .pub-filter-sep {
   width: 1px;
   height: 18px;
@@ -339,6 +331,17 @@ span.highlight {
   font-size: 12px;
   color: #6b7f94;
   white-space: nowrap;
+}
+
+/* Filtering to Selected shows only highlighted rows, so the highlight
+   carries no information there - render them as ordinary cards instead. */
+.publication-table.is-filtered-selected .representative-paper td {
+  background: #ffffff;
+  border-color: #e8edf2;
+}
+
+.publication-table.is-filtered-selected .representative-paper:hover td {
+  border-color: #d5e2f0;
 }
 
 /* Must beat the mobile rule that turns rows into blocks */
