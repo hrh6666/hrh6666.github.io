@@ -277,6 +277,75 @@ span.highlight {
   font-weight: 700;
 }
 
+/* --- Publication filters --- */
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 16px 4px;
+}
+
+.pub-filter {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #334e68;
+  background: #ffffff;
+  border: 1px solid #d9e8f8;
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.pub-filter:hover {
+  color: #1772d0;
+  border-color: #9fc7ef;
+}
+
+.pub-filter:focus-visible {
+  outline: 2px solid #1772d0;
+  outline-offset: 2px;
+}
+
+.pub-filter.is-active {
+  color: #ffffff;
+  background: #1772d0;
+  border-color: #1772d0;
+  box-shadow: 0 4px 12px rgba(23, 114, 208, 0.22);
+}
+
+/* "Selected" echoes the highlight colour of the representative rows */
+.pub-filter[data-filter="selected"].is-active {
+  color: #7c2d12;
+  background: #fff2a8;
+  border-color: #e3cf6a;
+  box-shadow: 0 4px 12px rgba(190, 150, 30, 0.22);
+}
+
+.pub-filter-sep {
+  width: 1px;
+  height: 18px;
+  background: #d9e8f8;
+  margin: 0 2px;
+}
+
+.pub-filter-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #6b7f94;
+  white-space: nowrap;
+}
+
+/* Must beat the mobile rule that turns rows into blocks */
+.publication-table .paper-row[hidden] {
+  display: none !important;
+}
+
 .venue-label {
   display: inline-block;
   color: #334e68;
@@ -551,6 +620,16 @@ span.highlight {
     margin-top: 4px;
     min-width: 0;
     text-align: left;
+  }
+
+  .pub-filters {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .pub-filter-count {
+    margin-left: 0;
+    width: 100%;
   }
 
   .publication-table tr,

@@ -262,10 +262,20 @@
             </td>
           </tr>
         </tbody></table>
-          
+
+          <div class="pub-filters" role="group" aria-label="Filter publications">
+            <button type="button" class="pub-filter is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="pub-filter" data-filter="selected" aria-pressed="false">Selected</button>
+            <span class="pub-filter-sep" aria-hidden="true"></span>
+            <button type="button" class="pub-filter" data-filter="agents" aria-pressed="false">Agents</button>
+            <button type="button" class="pub-filter" data-filter="rl" aria-pressed="false">Reinforcement Learning</button>
+            <button type="button" class="pub-filter" data-filter="generative" aria-pressed="false">Generative Models</button>
+            <span class="pub-filter-count" aria-live="polite"></span>
+          </div>
+
 		          <table class="publication-table" style="width:100%;border:0px;border-spacing:0px 12px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <tr class="paper-row representative-paper">
+            <tr class="paper-row representative-paper" data-topics="agents">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <video src="images/rax.mp4" aria-label="RAX project preview" autoplay muted loop playsinline
@@ -309,7 +319,7 @@
               </td>
             </tr>
             
-            <tr class="paper-row representative-paper">
+            <tr class="paper-row representative-paper" data-topics="generative">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <video src="images/eqc.mp4" aria-label="EqC project preview" autoplay muted loop playsinline
@@ -343,7 +353,7 @@
               </td>
             </tr>
             
-            <tr class="paper-row">
+            <tr class="paper-row representative-paper" data-topics="agents generative">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <img src="images/world-action-planner.svg" alt="World Action Planner teaser"
@@ -372,7 +382,7 @@
               </td>
             </tr>
             
-            <tr class="paper-row">
+            <tr class="paper-row" data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <video src="images/skillx_real_mocap.mp4" aria-label="SkillX project preview" autoplay muted loop playsinline
@@ -409,7 +419,7 @@
               </td>
             </tr>
             
-            <tr class="paper-row representative-paper">
+            <tr class="paper-row representative-paper" data-topics="generative">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <img src="images/GeCO.png" alt="GeCO teaser"
@@ -439,7 +449,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row">
+            <tr class="paper-row" data-topics="agents">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative; background-color:#ffffff;">
                   <img src="https://raw.githubusercontent.com/Imbernoulli/MLS-Bench/main/assets/mls-overview.png" alt="MLS-Bench overview"
@@ -492,7 +502,7 @@
               </td>
             </tr>
 
-		             <tr class="paper-row">
+		             <tr class="paper-row" data-topics="rl">
 		              <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="vrrobo_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="vrrobo_video" muted autoplay loop playsinline
@@ -528,7 +538,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row representative-paper">
+            <tr class="paper-row representative-paper" data-topics="generative rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="diffusion_mpc_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="diffusion_mpc_video" muted autoplay loop playsinline
@@ -562,7 +572,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row representative-paper">
+            <tr class="paper-row representative-paper" data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="moeloco_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="moeloco_video" muted autoplay loop playsinline
@@ -595,7 +605,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row">
+            <tr class="paper-row" data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="vrrobo_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <!-- <video id="vrrobo_video" muted autoplay loop playsinline
@@ -636,7 +646,7 @@
               </td>
             </tr>
 
-            <tr class="paper-row">
+            <tr class="paper-row" data-topics="rl">
               <td class="paper-media" style="padding:16px;width:40%;vertical-align:middle">
                 <div id="rrw_container" style="width:100%; aspect-ratio: 16 / 9; overflow:hidden; position:relative;">
                   <video id="rrw_video" muted autoplay loop playsinline
@@ -701,5 +711,43 @@
         </td>
       </tr>
     </table>
+    <script>
+      (function () {
+        var bar = document.querySelector('.pub-filters');
+        if (!bar) return;
+        var buttons = [].slice.call(bar.querySelectorAll('.pub-filter'));
+        var rows = [].slice.call(document.querySelectorAll('.publication-table .paper-row'));
+        var count = bar.querySelector('.pub-filter-count');
+
+        function matches(row, filter) {
+          if (filter === 'all') return true;
+          if (filter === 'selected') return row.classList.contains('representative-paper');
+          return (row.getAttribute('data-topics') || '').split(' ').indexOf(filter) !== -1;
+        }
+
+        function apply(filter) {
+          var shown = 0;
+          rows.forEach(function (row) {
+            var show = matches(row, filter);
+            row.hidden = !show;
+            if (show) shown++;
+          });
+          count.textContent = shown + (shown === 1 ? ' paper' : ' papers');
+          buttons.forEach(function (btn) {
+            var on = btn.getAttribute('data-filter') === filter;
+            btn.classList.toggle('is-active', on);
+            btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+        }
+
+        buttons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            apply(btn.getAttribute('data-filter'));
+          });
+        });
+
+        apply('all');
+      })();
+    </script>
   </body>
 </html>
