@@ -358,22 +358,8 @@ span.highlight {
   white-space: nowrap;
 }
 
+.oral-badge,
 .spotlight-badge {
-  display: inline-block;
-  margin-left: 4px;
-  padding: 1px 6px;
-  border: 1px solid #a8cdf3;
-  border-radius: 999px;
-  background: #eef6ff;
-  color: #1256a0;
-  font-size: 0.9em;
-  font-weight: 700;
-  line-height: 1.35;
-  vertical-align: 1px;
-  white-space: nowrap;
-}
-
-.oral-badge {
   display: inline-block;
   margin-left: 4px;
   padding: 1px 6px;
