@@ -543,6 +543,34 @@ span.highlight {
   line-height: 1.55;
 }
 
+.service-role {
+  font-weight: 700;
+  color: #1f2d3d;
+  margin-bottom: 8px;
+}
+
+.service-group {
+  margin-bottom: 8px;
+}
+
+.service-group:last-child {
+  margin-bottom: 0;
+}
+
+.service-group-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a98a8;
+}
+
+.service-sep {
+  color: #c7d2dd;
+  padding: 0 7px;
+}
+
 .footer-table {
   width: 100%;
   border: 0;
