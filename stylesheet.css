@@ -558,7 +558,7 @@ span.highlight {
   object-fit: contain;
 }
 
-.talk-place a {
+.talk-place a:first-child {
   font-weight: 600;
   color: #111827;
 }
