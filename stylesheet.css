@@ -392,8 +392,7 @@ span.highlight {
 }
 
 .timeline-item:hover,
-.paper-row:hover td,
-.service-card:hover td {
+.paper-row:hover td {
   border-color: #d5e2f0;
   box-shadow: 0 10px 24px rgba(30, 55, 90, 0.07);
 }
@@ -513,71 +512,94 @@ span.highlight {
   color: #475569;
 }
 
-.service-table {
-  border-spacing: 0;
+.talk-block {
+  margin-top: 12px;
 }
 
-.service-card td {
-  border-top: 1px solid #e8edf2;
-  border-bottom: 1px solid #e8edf2;
-  background: #ffffff;
-  box-shadow: 0 6px 18px rgba(30, 55, 90, 0.05);
+.talk-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.01em;
 }
 
-.service-card td:first-child {
-  border-left: 1px solid #e8edf2;
-  border-radius: 8px 0 0 8px;
+.talk-venues {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
 }
 
-.service-card td:last-child {
-  border-right: 1px solid #e8edf2;
-  border-radius: 0 8px 8px 0;
+.talk-venues li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+  line-height: 1.4;
 }
 
-.service-title h2 {
-  margin: 0;
-  font-size: 18px;
+.talk-date {
+  min-width: 74px;
+  color: #8a98a8;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-.service-list {
-  line-height: 1.55;
+.talk-logo {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.talk-place a {
+  font-weight: 600;
+  color: #111827;
+}
+
+.talk-place a:hover,
+.talk-place a:focus {
+  color: #f09228;
+}
+
+.service-block {
+  margin-top: 12px;
 }
 
 .service-role {
+  font-size: 12px;
   font-weight: 700;
-  color: #1f2d3d;
-  margin-bottom: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a98a8;
 }
 
 .service-rows {
+  margin-top: 6px;
   display: grid;
-  gap: 2px;
+  gap: 5px;
 }
 
 .service-row {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   align-items: baseline;
-  padding: 7px 0;
-  border-top: 1px solid #eef2f7;
-}
-
-.service-row:first-child {
-  border-top: 0;
+  line-height: 1.4;
 }
 
 .service-row-label {
-  min-width: 212px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #8a98a8;
+  min-width: 214px;
+  font-weight: 600;
+  color: #111827;
 }
 
 .service-row-items {
   flex: 1;
   min-width: 0;
+  color: #334155;
 }
 
 .service-sep {
@@ -585,15 +607,6 @@ span.highlight {
   padding: 0 7px;
 }
 
-.talk-topic {
-  margin: 10px 0 0;
-  font-style: italic;
-  color: #334155;
-}
-
-.affiliation-logo img.logo-ucsd {
-  max-height: 30px;
-}
 
 .footer-table {
   width: 100%;
@@ -715,36 +728,21 @@ span.highlight {
     border-top: 0;
   }
 
-  .service-card,
-  .service-card td {
-    display: block;
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  .service-card td {
-    border-left: 1px solid #e8edf2;
-    border-right: 1px solid #e8edf2;
-    border-radius: 0;
-  }
-
-  .service-card td:first-child {
-    border-radius: 8px 8px 0 0;
-    border-bottom: 0;
-    text-align: left;
-  }
-
-  .service-card td:last-child {
-    border-radius: 0 0 8px 8px;
-    border-top: 0;
-  }
-
   .service-row {
     display: block;
   }
 
   .service-row-label {
     min-width: 0;
-    margin-bottom: 2px;
+  }
+
+  .talk-venues li {
+    flex-wrap: wrap;
+    gap: 0 8px;
+  }
+
+  .talk-date {
+    min-width: 0;
+    flex-basis: 100%;
   }
 }
