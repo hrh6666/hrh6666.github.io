@@ -558,6 +558,10 @@ span.highlight {
   object-fit: contain;
 }
 
+.talk-place a {
+  color: inherit;
+}
+
 .talk-place a:first-child {
   font-weight: 600;
   color: #111827;
