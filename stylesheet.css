@@ -516,6 +516,10 @@ span.highlight {
   margin-top: 12px;
 }
 
+.talk-block + .talk-block {
+  margin-top: 16px;
+}
+
 .talk-title {
   font-size: 17px;
   font-weight: 700;
