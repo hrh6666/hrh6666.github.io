@@ -549,16 +549,25 @@ span.highlight {
   margin-bottom: 8px;
 }
 
-.service-group {
-  margin-bottom: 8px;
+.service-rows {
+  display: grid;
+  gap: 2px;
 }
 
-.service-group:last-child {
-  margin-bottom: 0;
+.service-row {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-top: 1px solid #eef2f7;
 }
 
-.service-group-label {
-  display: block;
+.service-row:first-child {
+  border-top: 0;
+}
+
+.service-row-label {
+  min-width: 212px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -566,9 +575,24 @@ span.highlight {
   color: #8a98a8;
 }
 
+.service-row-items {
+  flex: 1;
+  min-width: 0;
+}
+
 .service-sep {
   color: #c7d2dd;
   padding: 0 7px;
+}
+
+.talk-topic {
+  margin: 10px 0 0;
+  font-style: italic;
+  color: #334155;
+}
+
+.affiliation-logo img.logo-ucsd {
+  max-height: 30px;
 }
 
 .footer-table {
@@ -713,5 +737,14 @@ span.highlight {
   .service-card td:last-child {
     border-radius: 0 0 8px 8px;
     border-top: 0;
+  }
+
+  .service-row {
+    display: block;
+  }
+
+  .service-row-label {
+    min-width: 0;
+    margin-bottom: 2px;
   }
 }
